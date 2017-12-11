@@ -40,31 +40,31 @@ module.exports = Generator.extend({
         // this.directory('test', 'test');
         this.fs.copyTpl(
           this.templatePath('test/greeter-spec_mocha.ts'),
-          this.destinationPath('test/greeter-spec.ts'),
+          this.destinationPath('test/greeter.spec.ts'),
           { isWindows: process.platform === 'win32' }
         );
         this.fs.copyTpl(
           this.templatePath('test/index-spec_mocha.ts'),
-          this.destinationPath('test/index-spec.ts'),
+          this.destinationPath('test/index.spec.ts'),
           { isWindows: process.platform === 'win32' }
         );
       } else if (this.options.ava) {
         this.fs.copyTpl(
           this.templatePath('test/greeter-spec_ava.ts'),
-          this.destinationPath('test/greeter-spec.ts')
+          this.destinationPath('test/greeter.spec.ts')
         );
         this.fs.copyTpl(
           this.templatePath('test/index-spec_ava.ts'),
-          this.destinationPath('test/index-spec.ts')
+          this.destinationPath('test/index.spec.ts')
         );
       } else {
         this.fs.copyTpl(
           this.templatePath('test/greeter-spec.ts'),
-          this.destinationPath('__tests__/greeter-spec.ts')
+          this.destinationPath('test/greeter.spec.ts')
         );
         this.fs.copyTpl(
           this.templatePath('test/index-spec.ts'),
-          this.destinationPath('__tests__/index-spec.ts')
+          this.destinationPath('test/index.spec.ts')
         );
       }
     },
@@ -159,6 +159,10 @@ module.exports = Generator.extend({
       this.fs.copy(
         this.templatePath('_tsconfig.json'),
         this.destinationPath('tsconfig.json')
+      );
+      this.fs.copy(
+        this.templatePath('_tsconfig.build.json'),
+        this.destinationPath('tsconfig.build.json')
       );
       this.fs.copy(
         this.templatePath('_tslint.json'),
