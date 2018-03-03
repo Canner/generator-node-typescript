@@ -1,4 +1,6 @@
 # TypeScript NodeJS Generator
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Canner/generator-node-typescript.svg)](https://greenkeeper.io/)
 [![Build Status](https://secure.travis-ci.org/ospatil/generator-node-typescript.png?branch=master)](https://travis-ci.org/ospatil/generator-node-typescript)
 [![npm version](https://badge.fury.io/js/generator-node-typescript.svg)](http://badge.fury.io/js/generator-node-typescript)
 
